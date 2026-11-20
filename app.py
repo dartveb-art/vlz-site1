@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 import urllib.request, json
 app=FastAPI(title="Воскресенский Литейный Завод")
