@@ -48,7 +48,7 @@ def quotes():
 
 FERROALLOYS = [
 ("ferromolybdenum-60","Ферромолибден 60","https://raw.githubusercontent.com/dartveb-art/vlz-site1/main/static/images/ferromolybdenum-60.webp"),
-("ferromolybdenum-50","Ферромолибден 50","https://www.cnxhyalloy.com/uploads/2021/08/ferromolybdenum.jpg"),
+("ferromolybdenum-50","Ферромолибден 50","https://raw.githubusercontent.com/dartveb-art/vlz-site1/main/static/images/ferromolybdenum-50.webp"),
 ("ferromanganese-fmn78","Ферромарганец ФМн78","https://upload.wikimedia.org/wikipedia/commons/1/1d/Ferromangan%C3%A8se_m%C3%A9tal.jpg"),
 ("ferromanganese-fmn95","Ферромарганец ФМн95","https://upload.wikimedia.org/wikipedia/commons/8/8a/Ferromangan%C3%A8se_carbur%C3%A9.jpg"),
 ("ferrosilicon-fs75","Ферросилиций ФС75","https://www.za-refractories.com/uploads/2021/06/ferro-silicon-75.jpg"),
