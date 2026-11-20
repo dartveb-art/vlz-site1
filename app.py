@@ -86,6 +86,15 @@ def render_page(path: str):
 @app.get("/contacts",response_class=HTMLResponse)
 def pages(request: Request):
     return HTMLResponse(render_page(request.url.path))
+@app.get("/metals/{slug}",response_class=HTMLResponse)
+def ferro_detail(slug: str):
+    item=next((x for x in FERROALLOYS if x[0]==slug),None)
+    if not item:
+        return HTMLResponse(render_page("/metals"),status_code=404)
+    _,name,photo=item
+    body=f"""<section class="pagehead"><div class="eyebrow"><a href="/metals">Каталог / Ферросплавы</a></div><h1>{name}</h1><p>Карточка товарной позиции Воскресенского Литейного Завода.</p></section><section class="detailgrid"><div class="detailphoto"><img src="{photo}" alt="{name}"><small>Иллюстративное фото продукта. Фактический вид партии может отличаться.</small></div><div class="panel"><h2>{name}</h2><p>Позиция каталога ферросплавов ВЛЗ.</p><p class="muted">Точная химическая спецификация, фракция, наличие и условия поставки уточняются по документам конкретной партии.</p><a class="btn" href="/procurement">Запросить условия поставки</a><p><a href="/metals">← Вернуться к ферросплавам</a></p></div></section>"""
+    return HTMLResponse(render_page_with_body(name,body))
+
 @app.get("/admin.html",response_class=HTMLResponse)
 def admin():
     return HTMLResponse("""<!doctype html><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><title>ВЛЗ — администрирование</title><style>body{font:16px Arial;background:#f4f1eb;padding:24px;color:#24211d}main{max-width:680px;margin:auto;background:white;padding:24px;border-radius:16px}a{color:#98552f}</style><main><h1>ВЛЗ — тестовая панель</h1><p>Тестовый стенд. Управление закупочными ценами, заявками и новостями будет подключено отдельным этапом.</p><p><a href='/'>Вернуться на сайт</a></p><p><a href='/api/health'>Проверить сервер</a></p></main>""")
