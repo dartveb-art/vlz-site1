@@ -133,7 +133,7 @@ def render_page(path: str):
     title, body = PAGES.get(path, PAGES["/"])
     links=[("/", "Главная"),("/about","О заводе"),("/metals","Каталог металлов"),("/quotes","Котировки"),("/procurement","Закупки"),("/news","Новости"),("/contacts","Контакты")]
     nav="".join(f'<a href="{u}"'+(' aria-current="page"' if u==path else '')+f'>{label}</a>' for u,label in links)
-    return f"""<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{title} — Воскресенский Литейный Завод</title>{STYLE}</head><body><header><a class="brand" href="/">ВЛЗ <span>●</span> ВОСКРЕСЕНСКИЙ ЛИТЕЙНЫЙ ЗАВОД</a><nav>{nav}</nav></header><main>{body}</main><footer>© Воскресенский Литейный Завод · Тестовая версия сайта</footer></body></html>"""
+    return f"""<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{title} — Воскресенский Литейный Завод</title>{STYLE}</head><body><header><a class="brand" href="/">ВЛЗ <span>●</span> ВОСКРЕСЕНСКИЙ ЛИТЕЙНЫЙ ЗАВОД</a><nav>{nav}</nav></header><main>{body}</main><footer>© Воскресенский Литейный Завод</footer></body></html>"""
 @app.get("/",response_class=HTMLResponse)
 @app.get("/about",response_class=HTMLResponse)
 @app.get("/metals",response_class=HTMLResponse)
