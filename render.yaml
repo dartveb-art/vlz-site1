@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: vlz-site1
+    name: vlz-preview
     runtime: docker
     plan: free
     dockerfilePath: ./Dockerfile
